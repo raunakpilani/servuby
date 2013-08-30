@@ -1,10 +1,12 @@
 Servuby runs a browser using a server connection
 run using: 
 
-ruby src/server_runner.rb
+ruby src/servuby_main.rb
 
-http://127.0.0.1:8888/mf/start - to start mozilla firefox
-mf/close - to close
-mf/clean - to clean
+http://127.0.0.1:4567/firefox/start - to start mozilla firefox
+firefox/stop - to close
+firefox/clean - to clean
+
+Similarly, use chrome and safari.
 
 
