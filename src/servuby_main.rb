@@ -5,5 +5,9 @@ get '/' do
 end
 
 get '/:browser/:command' do
-  erb "#{params[:browser]}/#{params[:command]}".to_sym
+  begin
+    erb "#{params[:browser]}/#{params[:command]}#{params[:proxy] == "true" ? "-proxy" : ""}".to_sym
+  rescue Errno::ENOENT => msg
+    "#{msg}"
+  end
 end
