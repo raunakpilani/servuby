@@ -4,9 +4,8 @@ run using:
 ruby src/servuby_main.rb
 
 http://127.0.0.1:4567/firefox/start - to start mozilla firefox
+firefox/start?proxy=true - to start with proxy as 127.0.0.1:3128
 firefox/stop - to close
 firefox/clean - to clean
 
 Similarly, use chrome and safari.
-
-
