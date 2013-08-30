@@ -1,0 +1,8 @@
+<p> Starting Chrome </p>
+<p> Chrome is running at PID: 
+<%=
+CHROME_EXEC = "/Applications/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome" 
+USER_DIR = "/Users/raunakpilani/Library/Application Support/Google/Chrome-empty"
+pid = spawn("#{CHROME_EXEC} --enable-udd-profiles --user-data-dir=\"#{USER_DIR}\" --profile-directory=\"Empty\"")
+%>
+
