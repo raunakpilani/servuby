@@ -1,0 +1,7 @@
+<p> Starting firefox!! </p>
+<p> Firefox is running as PID:
+<%= 
+  FIREFOX_EXEC = "/Applications/firefox.app/Contents/MacOS/firefox"
+  pid = spawn("#{FIREFOX_EXEC} -CreateProfile Empty && #{FIREFOX_EXEC} -P Empty")
+%>
+</p>

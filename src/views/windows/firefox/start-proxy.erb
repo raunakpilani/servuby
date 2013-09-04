@@ -1,0 +1,8 @@
+<p> Starting Firefox with Proxy </p>
+   <p> Firefox is running as PID: 
+<%
+  FIREFOX_EXEC = "/Applications/firefox.app/Contents/MacOS/firefox"
+  PROF_PATH = "/Users/raunakpilani/Library/Application\\ Support/Firefox/Profiles/*.Empty"
+  spawn("#{FIREFOX_EXEC} -CreateProfile Empty && path=`ls -d #{PROF_PATH}` && echo 'user_pref(\"network.proxy.http\", \"127.0.0.1\");\\nuser_pref(\"network.proxy.http_port\", 3128);\\nuser_pref(\"network.proxy.type\", 1);' >> $path/prefs.js && #{FIREFOX_EXEC} -P Empty")
+%>
+</p>
