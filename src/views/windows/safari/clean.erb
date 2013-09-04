@@ -1,4 +1,7 @@
 <p> Cleaning Safari </p>
 <% 
-spawn ("rm -rf /Users/raunakpilani/Library/Safari/*.plist /Users/raunakpilani/Library/Safari/*.sk" )
+PROFILE_LOCAL = "%LOCALAPPDATA%\\Apple Computer\\Safari"
+PROFILE_ROAMING = "%APPDATA%\\Apple Computer\\Safari"
+PROFILE_PREF = "%APPDATA%\\Apple Computer\\Preferences"
+spawn ("rmdir /s /q \"#{PROFILE_LOCAL}\" && rmdir /s /q \"#{PROFILE_ROAMING}\"&& rmdir /s /q \"#{PROFILE_PREF}\"" )
 %>

@@ -1,2 +1,4 @@
 <p> Stopping Safari </p>
-<% spawn("sudo /usr/sbin/networksetup -setwebproxystate \"wi-fi\" off &&  pkill Safari") %>
+<% 
+    REG_ENTRY = "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Internet Settings"
+spawn("taskkill /f /im safari.exe && reg add \"#{REG_ENTRY}\" /v ProxyEnable /t REG_DWORD /d 0 /f ") %>

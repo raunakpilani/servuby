@@ -1,4 +1,6 @@
 <p> Starting Safari </p>
 <p> Started Safari at PID: 
-<%= spawn("sudo /usr/sbin/networksetup -setwebproxy \"wi-fi\" 127.0.0.1 3128 && sudo /usr/sbin/networksetup -setwebproxystate \"wi-fi\" on && open /Applications/Safari.app") %>
+<%= 
+  REG_ENTRY = "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Internet Settings"
+  spawn("reg add \"#{REG_ENTRY}\" /v ProxyEnable /t REG_DWORD /d 1 /f && reg add \"#{REG_ENTRY}\" /v ProxyServer /t REG_SZ /d 127.0.0.1:3128 /f && start safari")  %>
 </p>
