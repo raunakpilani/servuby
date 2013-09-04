@@ -1,5 +1,7 @@
 <p> Starting Chrome </p>
-<%
+<p> Started Chrome at PID: 
+<%=
 USER_DIR = "%LOCALAPPDATA%/Google/Chrome/User Data"
-system("start chrome --enable-udd-profiles --user-data-dir=\"#{USER_DIR}\" --profile-directory=\"Empty\"")
+spawn("start chrome --enable-udd-profiles --user-data-dir=\"#{USER_DIR}\" --profile-directory=\"Empty\"")
 %>
+</p>
