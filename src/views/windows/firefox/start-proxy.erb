@@ -1,7 +1,7 @@
 <p> Starting Firefox with Proxy </p>
    <p> Firefox is running as PID: 
-<%
-  FIREFOX_EXEC = "C:/Program Files (x86)/Mozilla Firefox/firefox.exe"
+<%=
+  FIREFOX_EXEC = "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe"
   PROFILE_LOCAL = "%LOCALAPPDATA%\\Mozilla\\Firefox\\Profiles\\*.Empty"
   PROFILE_ROAMING = "%APPDATA%\\Mozilla\\Firefox\\Profiles\\*.Empty"
   spawn("\"#{FIREFOX_EXEC}\" -CreateProfile Empty && for /D %f in (\"#{PROFILE_LOCAL}\") do echo 'user_pref(\"network.proxy.http\", \"127.0.0.1\");\\nuser_pref(\"network.proxy.http_port\", 3128);\\nuser_pref(\"network.proxy.type\", 1);' >> %f/prefs.js && for /D %f in (\"#{PROFILE_ROAMING}\") do echo 'user_pref(\"network.proxy.http\", \"127.0.0.1\");\\nuser_pref(\"network.proxy.http_port\", 3128);\\nuser_pref(\"network.proxy.type\", 1);' >> %f/prefs.js && \"#{FIREFOX_EXEC}\" -P Empty")
