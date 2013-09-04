@@ -1,5 +1,7 @@
 <p> Cleaning Firefox Profile </p>
 <% 
-  spawn("rm -rf /Users/raunakpilani/Library/Application\\ Support/Firefox/Profiles/*.Empty/*")
+    PROFILE_LOCAL = "%LOCALAPPDATA%\\Mozilla\\Firefox\\Profiles\\*.Empty"
+    PROFILE_ROAMING = "%APPDATA%\\Mozilla\\Firefox\\Profiles\\*.Empty"
+    spawn("for /D %f in (\"#{PROFILE_LOCAL}\") do rmdir /s /q \"%f\" && for /D %f in (\"#{PROFILE_ROAMING}\") do rmdir /s /q \"%f\" ")
 %>
 
