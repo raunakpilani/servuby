@@ -1,4 +1,7 @@
 Servuby runs a browser using a server connection
+using ruby version 2.0.0
+using sinatra
+
 run using: 
 
 ruby src/servuby_main.rb
@@ -8,4 +11,5 @@ firefox/start?proxy=true - to start with proxy as 127.0.0.1:3128
 firefox/stop - to close
 firefox/clean - to clean
 
-Similarly, use chrome and safari.
+Similarly, use chrome, safari and ie.
+Note: IE works only on windows
